@@ -1,0 +1,116 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="BankoneLegacyPortal.SiteMaster" %>
+
+<!DOCTYPE html>
+<!-- Bankone Corporate Portal v2.3 | (c) 2009 Bankone Corporation -->
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Bankone Online Banking</title>
+    <!-- Bootstrap 3.1.1 via CDN - TODO: move to local (BANKLB-421) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <!-- jQuery 1.10.2 via CDN - BANKLB-601: upgrade to 2.x -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form id="frmMain" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="false" />
+
+        <!-- ===== Navigation ===== -->
+        <nav class="navbar navbar-bankone navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">BANKONE</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                My Accounts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/Accounts/Summary">Account Summary</a></li>
+                                <li><a runat="server" href="~/Accounts/Transactions">Transaction History</a></li>
+                                <li class="divider"></li>
+                                <li><a runat="server" href="~/Accounts/Transfer">Transfer Funds</a></li>
+                            </ul>
+                        </li>
+                        <li><a runat="server" href="~/Branch/Locator">Branch Locator</a></li>
+                        <li id="liAdmin" runat="server" visible="false">
+                            <a href="/Admin/UserManagement">Admin</a>
+                        </li>
+                    </ul>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">Open Account</a></li>
+                                <li><a runat="server" href="~/Account/Login">Log In</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a runat="server" href="~/Account/ChangePassword">
+                                        Welcome, <asp:LoginName ID="LoginName1" runat="server" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <asp:LoginStatus runat="server"
+                                        LogoutAction="Redirect"
+                                        LogoutText="Sign Out"
+                                        LogoutPageUrl="~/"
+                                        OnLoggingOut="LoginStatus_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== Main Content ===== -->
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            <hr />
+        </div>
+
+        <!-- ===== Footer (table-based layout - legacy) ===== -->
+        <div id="footer-main">
+            <div class="container">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td style="vertical-align:top;">
+                            <strong style="color:#C8960C; font-size:14px; letter-spacing:1px;">BANKONE CORPORATION</strong><br />
+                            <span class="footer-legal">
+                                Your Trusted Banking Partner Since 1987
+                            </span>
+                        </td>
+                        <td align="right" style="vertical-align:top; font-size:12px;">
+                            <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+                            <a href="#">Terms of Use</a> &nbsp;|&nbsp;
+                            <a href="#">Security Center</a> &nbsp;|&nbsp;
+                            <a href="~/About">About Us</a>
+                        </td>
+                    </tr>
+                </table>
+                <p class="footer-legal" style="margin-top:8px;">
+                    &copy; 2009 Bankone Corporation. All Rights Reserved. Member FDIC. Equal Housing Lender.
+                    Online Banking services are provided by Bankone Corporation, N.A.
+                    Deposits insured to at least $250,000 per depositor per ownership category.
+                </p>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

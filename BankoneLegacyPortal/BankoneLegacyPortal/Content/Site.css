@@ -1,0 +1,226 @@
+/* ============================================================
+   Bankone Corporate Portal - Site Stylesheet v2.3
+   Last modified: J.Thompson 08/14/2011
+   NOTE: Do not change brand colors without approval from
+   Marketing Dept - see policy BK-BRAND-002
+   ============================================================ */
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #F5F5F0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #333333;
+}
+
+/* ---- Navbar ---- */
+.navbar-bankone {
+    background-color: #003366;
+    border-color: #002244;
+}
+
+.navbar-bankone .navbar-brand {
+    color: #C8960C;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.navbar-bankone .navbar-brand:hover,
+.navbar-bankone .navbar-brand:focus {
+    color: #E8B820;
+    background: none;
+}
+
+.navbar-bankone .nav > li > a {
+    color: #CCDDEE;
+}
+
+.navbar-bankone .nav > li > a:hover,
+.navbar-bankone .nav > li > a:focus {
+    background-color: #002244;
+    color: #FFFFFF;
+}
+
+.navbar-bankone .nav > li.active > a,
+.navbar-bankone .nav > li.active > a:hover {
+    background-color: #002244;
+    color: #C8960C;
+}
+
+.navbar-bankone .nav .open > a,
+.navbar-bankone .nav .open > a:hover {
+    background-color: #002244;
+    color: #C8960C;
+}
+
+.navbar-bankone .navbar-toggle {
+    border-color: #CCDDEE;
+}
+
+.navbar-bankone .navbar-toggle .icon-bar {
+    background-color: #CCDDEE;
+}
+
+.navbar-bankone .dropdown-menu {
+    background-color: #003366;
+    border-color: #002244;
+}
+
+.navbar-bankone .dropdown-menu > li > a {
+    color: #CCDDEE;
+}
+
+.navbar-bankone .dropdown-menu > li > a:hover {
+    background-color: #002244;
+    color: #FFFFFF;
+}
+
+.navbar-bankone .dropdown-menu .divider {
+    background-color: #002244;
+}
+
+/* ---- Body Content ---- */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media screen and (min-width: 768px) {
+    .body-content {
+        padding: 0;
+    }
+}
+
+/* ---- Page Header ---- */
+.page-header {
+    border-bottom: 2px solid #C8960C;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+}
+
+.page-header h2 {
+    color: #003366;
+    margin-top: 20px;
+}
+
+/* ---- Jumbotron / Dashboard ---- */
+.jumbotron {
+    background-color: #003366;
+    color: #FFFFFF;
+    border-radius: 4px;
+    padding: 25px 30px;
+    margin-top: 10px;
+}
+
+.jumbotron h1 {
+    color: #C8960C;
+    font-size: 28px;
+}
+
+.jumbotron p {
+    color: #CCDDEE;
+    font-size: 14px;
+}
+
+/* ---- Panels ---- */
+.panel-bankone {
+    border-color: #003366;
+}
+
+.panel-bankone > .panel-heading {
+    background-color: #003366;
+    color: #FFFFFF;
+    border-color: #003366;
+}
+
+.panel-bankone > .panel-heading h3 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* ---- Tables ---- */
+.table > thead > tr > th {
+    background-color: #003366;
+    color: #FFFFFF;
+    border-color: #002244;
+}
+
+/* ---- Footer ---- */
+#footer-main {
+    background-color: #003366;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+#footer-main a {
+    color: #C8960C;
+    text-decoration: none;
+}
+
+#footer-main a:hover {
+    color: #E8B820;
+    text-decoration: underline;
+}
+
+.footer-legal {
+    font-size: 11px;
+    color: #889DAD;
+}
+
+/* ---- Login form ---- */
+.login-box {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-top: 4px solid #003366;
+    border-radius: 3px;
+}
+
+.login-box h2 {
+    color: #003366;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* ---- Account cards ---- */
+.account-card {
+    border-left: 4px solid #C8960C;
+}
+
+/* ---- Transaction row colors ---- */
+.txn-credit {
+    color: #006600;
+    font-weight: bold;
+}
+
+.txn-debit {
+    color: #CC0000;
+}
+
+/* ---- Alert / notification ---- */
+.bankone-alert {
+    background-color: #FFF9E6;
+    border: 1px solid #C8960C;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+/* ---- Form inputs ---- */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    max-width: 380px;
+}
+
+/* ---- Utility ---- */
+.gold-text { color: #C8960C; }
+.navy-text { color: #003366; }
